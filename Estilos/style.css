@@ -32,24 +32,64 @@ body{
 
 header{
     box-shadow: 3px 3px 35px rgba(0, 0, 0, 0.304);
-    margin-top: -27px;
-    background-color:var(--cor04);
+    margin-top: -20px;
+    /* background-color:var(--cor02); */
+    margin-bottom: 5px;
+    height: 130px;
 }
 nav{
     /* box-shadow: 3px 9px 7px rgba(0, 0, 0, 0.4); */
     margin-top: 0px;
-    background-color: var(--cor03);
-    padding: 3px;
+    /* background-color: var(--cor03); */
+    padding: 0;
 }
 
-nav > a{
-    font-family:'Barlow Condensed';
-    font-weight: bold;
-    color: black;
-    padding: 3px;
-    border-radius: 2px;
-}
+a{
+    padding-left:6px ;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 10px;
  
+}
+
+
+.link{
+    font-family: 'Encode Sans Expanded', sans-serif; 
+    font-weight: bold;
+    padding-top: 0px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--cor03);
+}
+
+.link::before, .link::after{
+    margin-top: 2px;
+    content: '';
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 2.5px;
+    background-color:var(--cor03);
+    transform: scaleX(0);
+    transition: transform .25s;
+
+}
+
+.link::before{
+    top:-3px;
+    transform-origin: left;
+}
+
+.link::after{
+    bottom: -3px;
+    transform-origin: right;
+}
+
+.link:hover::before, .link:hover::after{
+    transform: scaleX(1);
+}
+
 header > h1 {
     margin-top: 20px;
     font-family: 'Barlow Condensed', sans-serif;
@@ -58,6 +98,7 @@ header > h1 {
     padding: 5px;
     color: white;
     text-align: center;
+    padding-top: 25px;
 }
 
 main{
@@ -65,15 +106,22 @@ main{
     width: 95vw;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
     margin-top: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
     background-color: var(--cor02)
 }
 
+h2{
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    color: white;
+}
 section{
     position: relative;
     padding: 10px;
     margin-top: 50px;
-    margin-bottom: 100px;
-    
+    margin-bottom: 20px;
     height: 500px;
     background-color: white;
 }
@@ -81,14 +129,16 @@ section{
 section > div{
     position: relative;
     display: block;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0px;
-    padding: 0px;
-    width: 250px;
-    height: 250px;
-    background-color: lightgray;
+
+}
+
+div.cont{
+    position: absolute;
+    width: 93vw;
+    height: 68vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 p{
